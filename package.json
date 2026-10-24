@@ -1,0 +1,13 @@
+{
+  "name": "garagem-bike",
+  "version": "1.0.0",
+  "description": "Gestão de oficina e loja de bicicletas",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
