@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101311">
+<title>Entrar · Garagem Bike</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+<a class="skip-link" href="#form-area">Ir para o formulário</a>
+<div class="auth">
+  <aside class="auth-aside">
+    <div class="brand-static">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18.1 6.9A8 8 0 1 0 20 12h-8"/></svg>
+      </span>
+      <span class="brand-name">Garagem <span>Bike</span></span>
+    </div>
+    <div class="auth-pitch">
+      <p class="auth-headline">Da bancada ao balcão, tudo em um só lugar.</p>
+      <ul class="auth-points" id="points"></ul>
+    </div>
+    <p class="auth-foot">Acesso restrito a quem tem conta na oficina.</p>
+  </aside>
+
+  <main class="auth-main" id="form-area" tabindex="-1">
+    <div class="auth-card" id="card">
+      <p class="auth-loading">Carregando…</p>
+    </div>
+  </main>
+</div>
+<div class="toasts" id="toastroot" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">Ative o JavaScript para usar a Garagem Bike.</p></noscript>
+<script src="js/icons.js"></script>
+<script src="js/components.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

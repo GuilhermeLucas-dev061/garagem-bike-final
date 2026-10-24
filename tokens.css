@@ -1,0 +1,124 @@
+/* Design tokens da Garagem Bike.
+   Tudo que é cor, tipo, espaço, raio ou medida de layout nasce aqui; os demais
+   arquivos só consomem estas variáveis.
+
+   Breakpoints (media queries não aceitam variáveis, então ficam documentados):
+     1024px  menu lateral vira gaveta; colunas de painel empilham
+      640px  tabelas viram blocos; formulários em uma coluna; alvos de toque maiores */
+
+:root {
+  color-scheme: dark;
+
+  /* Superfícies: a profundidade vem da diferença de luminosidade, não de sombra */
+  --bg: #101311;
+  --surface-1: #171b18;
+  --surface-2: #1d231f;
+  --surface-3: #262d28;
+  --inset: #0c0f0d;
+
+  /* Linhas */
+  --border: #2a322d;
+  --border-subtle: #212823;
+  --border-strong: #3b463e;
+  --border-control: #5d6b61;   /* campos de formulário: 3:1 contra o fundo (WCAG 1.4.11) */
+
+  /* Texto */
+  --text: #f0f3ef;
+  --text-2: #a0aaa2;
+  --text-3: #8a958c;
+
+  /* Identidade: verde sálvia, usado em ação principal, seleção e estados positivos */
+  --brand: #8dbb63;
+  --brand-hover: #a1cc79;
+  --brand-active: #7aa652;
+  --brand-fg: #0f1710;
+  --focus: #a1cc79;
+  --selection: rgb(141 187 99 / 0.3);
+  --scrim: rgb(6 8 7 / 0.64);
+
+  /* Estados semânticos (cor sólida para ponto/ícone, "-text" para texto sobre superfície) */
+  --success: #8dbb63;
+  --warning: #e0ae4a;
+  --danger: #e5675f;
+  --info: #6fa3e0;
+  --danger-text: #f08a83;
+  --violet: #a78bda;
+
+  /* Fundos translúcidos para ícones e destaques */
+  --tint-brand: rgb(141 187 99 / 0.14);
+  --tint-info: rgb(111 163 224 / 0.14);
+  --tint-warning: rgb(224 174 74 / 0.14);
+  --tint-danger: rgb(229 103 95 / 0.14);
+  --tint-violet: rgb(167 139 218 / 0.14);
+
+  /* Tipografia */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-xs: 0.75rem;     /* 12px — o menor tamanho usado */
+  --text-sm: 0.8125rem;   /* 13px — apoio, rótulos, botões compactos */
+  --text-base: 0.875rem;  /* 14px — corpo, tabelas, campos, navegação */
+  --text-md: 0.9375rem;   /* 15px — títulos de seção */
+  --text-lg: 1.0625rem;   /* 17px — títulos de diálogo */
+  --text-xl: 1.25rem;     /* 20px — título da página */
+  --text-2xl: 1.75rem;    /* 28px — números de destaque */
+  --leading-tight: 1.2;
+  --leading-base: 1.5;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Espaçamento (escala de 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  /* Raios e sombras (sombra só em camadas flutuantes) */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --shadow-popover: 0 8px 24px rgb(0 0 0 / 0.4);
+  --shadow-dialog: 0 24px 64px rgb(0 0 0 / 0.55);
+
+  /* Layout */
+  --sidebar-w: 16rem;
+  --topbar-h: 3.5rem;
+  --content-max: 72.5rem;
+  --narrow-max: 46rem;
+  --gutter: 2rem;
+  --stack-gap: 1.75rem;
+
+  /* Controles */
+  --control-h: 2.25rem;
+  --control-h-sm: 1.875rem;
+
+  /* Movimento: curto e funcional */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur: 180ms;
+
+  /* Camadas */
+  --z-topbar: 10;
+  --z-scrim: 30;
+  --z-drawer: 40;
+  --z-popover: 50;
+  --z-toast: 60;
+}
+
+@media (max-width: 1024px) {
+  :root { --gutter: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 1rem;
+    --control-h: 2.75rem;      /* 44px: alvo de toque confortável */
+    --control-h-sm: 2.25rem;
+    --topbar-h: 3.25rem;
+    --stack-gap: 1.5rem;
+  }
+}

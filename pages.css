@@ -1,0 +1,72 @@
+/* Composições específicas de cada tela. */
+
+/* Painel inicial: coluna principal + coluna de apoio */
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 23rem;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* Meta mensal (rodapé do bloco financeiro) */
+.goal {
+  display: grid;
+  grid-template-columns: auto minmax(8rem, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-4);
+}
+.goal-label { font-size: var(--text-sm); font-weight: var(--weight-medium); }
+.goal-text { font-size: var(--text-sm); color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Página de meta: progresso + formulário */
+.split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--space-6); align-items: start; }
+.goal-card { display: grid; gap: var(--space-3); }
+.goal-card .figure-value { margin-top: 0; }
+.form-stack { display: grid; gap: var(--space-4); }
+
+/* Formulário de agendamento */
+.narrow { max-width: var(--narrow-max); }
+.form-sections { display: grid; }
+.form-section { padding: var(--space-5); border-bottom: 1px solid var(--border); }
+.form-section legend {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--space-4);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+.form-section .form-grid { clear: both; }
+.form-foot { padding: var(--space-4) var(--space-5); }
+
+/* Profissionais */
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: var(--space-4); }
+.person { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-4); align-items: start; }
+.person .btn { grid-column: 1 / -1; }
+.person-name { font-size: var(--text-md); font-weight: var(--weight-semibold); }
+.person-status { margin-top: var(--space-2); }
+
+
+/* Acompanhamento do cliente */
+.orders { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: var(--space-4); }
+.order { display: grid; gap: var(--space-5); padding: var(--space-5); overflow: visible; align-content: start; }
+.order-head { display: flex; justify-content: space-between; gap: var(--space-4); align-items: flex-start; }
+.order-title { font-size: var(--text-md); font-weight: var(--weight-semibold); }
+.order-meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle); }
+.order-meta dt { font-size: var(--text-xs); color: var(--text-3); }
+.order-meta dd { font-weight: var(--weight-medium); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 1200px) {
+  .dash-grid { grid-template-columns: minmax(0, 1fr); }
+  .split { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .goal { grid-template-columns: minmax(0, 1fr) auto; }
+  .goal .meter { grid-column: 1 / -1; grid-row: 2; }
+  .goal-text { grid-row: 1; grid-column: 2; }
+  .goal-label { grid-row: 1; grid-column: 1; }
+  .goal .link { grid-column: 1 / -1; justify-self: start; }
+  .panel-foot { padding: var(--space-4); }
+  .people, .orders { grid-template-columns: minmax(0, 1fr); }
+  .form-section, .form-foot { padding: var(--space-4); }
+}

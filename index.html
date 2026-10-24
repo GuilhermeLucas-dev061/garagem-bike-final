@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101311">
+<title>Garagem Bike | Oficina &amp; Bike Shop</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Ir para o conteúdo</a>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Menu lateral">
+    <button type="button" class="brand" data-action="go" data-page="dashboard" aria-label="Garagem Bike, ir para o início">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18.1 6.9A8 8 0 1 0 20 12h-8"/></svg>
+      </span>
+      <span class="brand-name">Garagem <span>Bike</span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Principal"></nav>
+    <p class="sidebar-foot">Os dados ficam salvos no servidor da oficina.</p>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="icon-btn menu-btn" id="menuBtn" data-action="toggle-nav" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="crumbs" aria-label="Localização">
+        <ol>
+          <li class="crumb-root" id="crumbRoot"></li>
+          <li><h1 class="page-title" id="pageTitle" tabindex="-1"></h1></li>
+        </ol>
+      </nav>
+      <div class="topbar-actions" id="pageActions"></div>
+      <div class="usermenu" id="userMenu">
+        <button type="button" class="usermenu-btn" id="userBtn" data-action="toggle-user" aria-expanded="false" aria-controls="userPanel" aria-label="Menu da conta">
+          <span class="avatar" id="avatar" aria-hidden="true"></span>
+          <span class="usermenu-role" id="userRole"></span>
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="popover" id="userPanel" hidden></div>
+      </div>
+    </header>
+    <main class="content" id="content" tabindex="-1"></main>
+  </div>
+</div>
+
+<div id="modalroot"></div>
+<div class="toasts" id="toastroot" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">Ative o JavaScript para usar a Garagem Bike.</p></noscript>
+
+<script src="js/icons.js"></script>
+<script src="js/store.js"></script>
+<script src="js/components.js"></script>
+<script src="js/views.js"></script>
+<script src="js/dialogs.js"></script>
+<script src="js/accounts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
